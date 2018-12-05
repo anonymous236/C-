@@ -75,9 +75,11 @@
       out.println("jsp内置对象: out, 向浏览器输出\n");
     %>
     你好, <%= str %><br>
-    x+y= <%= add(1, 2) %>
+    x+y = <%= add(1, 2) %>
   </body>
   ```
+
+* JSP页面声明周期
 
 
 
