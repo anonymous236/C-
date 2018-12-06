@@ -144,11 +144,60 @@
       | String getServerName() | 返回接受请求的服务器主机名 |
       | int getServerPort() | 返回服务器接受此请求所用的端口号 |
       | String getCharacterEncoding() | 返回字符编码方式 |
-      | void setCharacterEncoding() | 设置请求的字符编码方式 |
+      | void setCharacterEncoding(String s) | 设置请求的字符编码方式 |
       | int getContentLength() | 返回请求体的长度(以字节数) |
       | String getRemoteAddr() | 返回发送此请求的客户端IP地址 |
       | String getRealPath(String path) | 返回一虚拟路径的真实路径 |
       | String request.getContextPath() | 返回上下文路径 |
-
+      
+      ```html
+      <h1>用户信息</h1>
+      <hr>
+      <form action="index.jsp" name="loginForm" method="post">
+          <table>
+              <tr>
+                  <td>用户名：</td>
+                  <td><input type="text" name="username" /></td>
+              </tr>
+              <tr>
+                  <td>
+                      <input type="checkbox" name="info" value="read">读书
+                      <input type="checkbox" name="info" value="video">视频
+                      <input type="checkbox" name="info" value="music">音乐
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="2"><input type="submit" value="登录" /></td>
+              </tr>
+          </table>
+      </form>
+      ```
+      ```jsp
+      <h1>request内置对象:</h1>
+      <hr>
+      <%
+          // 解决中文乱码问题，但是无法解决URL中的中文乱码(需要配置tomcat的server.xml文档)
+          request.setCharacterEncoding("utf-8");
+      %>
+      用户名: <%= request.getParameter("username")%><br>
+      信息:
+      <%
+          String[] information = request.getParameterValues("info");
+          for(int i=0; i<information.length; i++) {
+              out.print(information[i] + "<br>");
+          }
+      %>
+      ```
+      ```html
+      <%-- 使用URL传递参数 --%>
+      <a href="index.jsp?username=李四">测试使用URL传递参数</a>
+      <%-- 
+        需要修改tomcat服务器配置文件: server.xml
+        <Connector port="8080" protocol="HTTP/1.1"
+            connectionTimeout="20000"
+            redirectPort="8443"
+		          URIEncoding="utf-8" />
+      --%>
+      ```
 
 
