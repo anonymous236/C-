@@ -224,4 +224,21 @@
     | PrintWriter getWriter() | 返回可以向客户端输出字符串的一个对象 |
     | sendRedirect(java.lang.String location) | 重新定向客户端的请求 |
 
+    * PrintWriter对象的输出总是提前于内置out对象，要想先输出out对象再输出PrintWriter对象，需要清空缓冲区(清空缓冲区时会向页面输出)
+      ```jsp
+      <%
+        response.setContentType("text/html;charset=utf-8");
+        out.print("<h1>out内置对象</h1>");
+        out.print("<hr>");
+        out.flush();
+        PrintWriter outer = response.getWriter(); //获得输出流对象
+        outer.print("flush()后，PrintWriter输出流对象输出。<br>");
+      %>
+      ```
+    * 重定向:
+      * 请求重定向：客户端行为，response.sendRedirect()，从本质上讲等同于两次请求，前一次请求对象不会保存，地址栏的URL地址会改变。
+      * 请求转发：服务器行为，request.getRequestDispatcher().forward(req, resp); 是一次请求，转发后请求对象会保存，地址栏的URL地址不会改变。
+
+
+
 
