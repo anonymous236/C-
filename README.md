@@ -199,5 +199,17 @@
 		          URIEncoding="utf-8" />
       --%>
       ```
+      ```html
+      <%
+        request.setAttribute("password", "123456");
+      %>
+      得到密码: <%= request.getAttribute("password")%><br>
+      请求体的MIME类型: <%= request.getContentType()%><br>
+      请求用的协议类型及版本号: <%= request.getProtocol()%><br>
+      请求的服务器主机名: <%= request.getServerName()%><br>
+      服务器接受此请求所用的端口号: <%= request.getServerPort()%><br>
+      请求体的长度: <%= request.getContentLength()%><br>
+      请求的客户端IP地址: <%= request.getRemoteAddr()%>
+      ```
 
 
