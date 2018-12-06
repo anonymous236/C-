@@ -130,6 +130,18 @@
           </table>
       </form>
       ```
+    * request对象: **客户端的请求信息都被封装在request对象中**，它是HttpServletRequest类的实例。request对象具有请求域，完成客户端的请求之前，该对象一直有效。<br>
+      常用的方法有:
+      
+      | 方法 | 说明 |
+      | ------ | ------ |
+      | String getParameter(String name) | 返回name指定参数的参数值 |
+      | String[] getParameterValues(String name) | 返回包含参数name的所有值的数组 |
+      | void setAttribute(String, Object) | 存储此请求中的属性 |
+      | object getAttribute(String name) | 返回指定属性的属性值 |
+      | String getContentType() | 得到请求体的MIME类型 |
+      | String getProtocol() | 返回请求用的协议类型及版本号 |
+      | String getServName() | 返回接受请求的服务器主机名 |
 
 
 
