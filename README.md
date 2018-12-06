@@ -86,6 +86,11 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以用户访问index.jsp为例：<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户发出请求index.jsp, 判断是否是第一次请求。如果是，JSP引擎把该jsp文件转换成一个servlet，生成字节码文件，并执行jspInit()。如果不是，则直接访问生成的字节码文件。再解析执行jspService()方法，用来处理用户的请求。<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jspService()方法被用来处理客户端的请求。对于每一个请求，JSP引擎会创建一个新的线程来处理该请求。如果有多个客户端同时请求该jsp文件，则JSP引擎会创建多个线程，每个客户端请求对应一个线程。以多线程方式执行可大大降低对系统的资源需求，提高系统的并发量及响应时间。由于该Servlet常驻内存，故响应速度非常快。
+
+* JSP内置对象
+  * JSP内置对象是Web容器创建的一组对象，不使用new关键字就可以使用
+  * 9大内置对象：out, request, response, session, application, (不太常用的: Page, pageContent, exception, config)
+
   
 
 
