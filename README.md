@@ -111,6 +111,25 @@
       ```
       * get: 多以明文的方式通过URL提交数据，数据在URL中可以看到。提交的数据最多不超过2KB.安全性较低但效率比post高。适合提交数据量不大，安全性不高的数据。比如：搜索、查询等功能。
       * post: 将用户提交的信息封装在HTML HTADER中。适合提交数据量大、安全性高的用户信息。如：注册、修改、上传等功能。
+      ```html
+      <h1>用户登录</h1>
+      <hr>
+      <form action="index.jsp" name="loginForm" method="post">
+          <table>
+              <tr>
+                  <td>用户名：</td>
+                  <td><input type="text" name="username" /></td>
+              </tr>
+              <tr>
+                  <td>密码：</td>
+                  <td><input type="password" name="password" /></td>
+              </tr>
+              <tr>
+                  <td colspan="2"><input type="submit" value="登录" /></td>
+              </tr>
+          </table>
+      </form>
+      ```
 
 
 
