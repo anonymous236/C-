@@ -235,15 +235,23 @@
         outer.print("flush()后，PrintWriter输出流对象输出。<br>");
       %>
       ```
-    * ***重定向***:
-      * ***请求重定向：客户端行为，response.sendRedirect()，从本质上讲等同于两次请求，前一次请求对象不会保存，地址栏的URL地址会改变。***
-      * ***请求转发：服务器行为，request.getRequestDispatcher().forward(req, resp); 是一次请求，转发后请求对象会保存，地址栏的URL地址不会改变。***
+    * **重定向**:
+      * **请求重定向：客户端行为，response.sendRedirect()，从本质上讲等同于两次请求，前一次请求对象不会保存，地址栏的URL地址会改变。**
+      * **请求转发：服务器行为，request.getRequestDispatcher().forward(req, resp); 是一次请求，转发后请求对象会保存，地址栏的URL地址不会改变。**
       ```jsp
       <%
-        //请求重定向
-	    response.sendRedirect("register.jsp");
+        //在middle.jsp页面中：
+	    //请求重定向
+	    response.sendRedirect("dologin.jsp");
 	    //请求转发
-	    request.getRequestDispatcher("index.jsp").forward(request, response);
+	    //request.getRequestDispatcher("dologin.jsp").forward(request, response);
+	    
+	    /**
+	      以上语句可以分析为：首先在login.jsp页面填入form表单信息，提交到middle.jsp中。
+	      在middle.jsp有重定向和转发的语句，再跳转到dologin.jsp页面。
+	      若采用请求重定向，前一次请求对象不会保存，地址栏的URL地址会改变，在login.jsp中接收到的为null。
+	      若采用请求转发，转发后请求对象会保存，地址栏的URL地址不会改变，login.jsp成功显示提交的信息。
+	    */
       %>
       ```
 
