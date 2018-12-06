@@ -141,7 +141,14 @@
       | object getAttribute(String name) | 返回指定属性的属性值 |
       | String getContentType() | 得到请求体的MIME类型 |
       | String getProtocol() | 返回请求用的协议类型及版本号 |
-      | String getServName() | 返回接受请求的服务器主机名 |
+      | String getServerName() | 返回接受请求的服务器主机名 |
+      | int getServerPort() | 返回服务器接受此请求所用的端口号 |
+      | String getCharacterEncoding() | 返回字符编码方式 |
+      | void setCharacterEncoding() | 设置请求的字符编码方式 |
+      | int getContentLength() | 返回请求体的长度(以字节数) |
+      | String getRemoteAddr() | 返回发送此请求的客户端IP地址 |
+      | String getRealPath(String path) | 返回一虚拟路径的真实路径 |
+      | String request.getContextPath() | 返回上下文路径 |
 
 
 
