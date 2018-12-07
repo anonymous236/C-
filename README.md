@@ -255,7 +255,30 @@
       %>
       ```
 
+  * session对象:
+    * 表示客户端与服务器的一次会话。Web中的session指的是用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间。因此，session实际上时一个特定的时间概念
+    * 在服务器的内存中保存着不同用户的session
+    
+      | session对象的特性 |
+      | ------ |
+      | session对象是一个JSP内置对象 |
+      | session对象在第一个JSP页面被装载时自动创建，完成会话期管理 |
+      | 从一个客户打开浏览器并连接到服务器开始，到用户关闭浏览器离开服务器结束，成为一个回话 |
+      | 当一个用户访问一个服务器时，可能会在服务器的几个页面之间切换，服务器通过session对象来确定这个同一个客户 |
+      | session对象时HttpSession类的实例 |
 
+    * session对象常用的方法: 
+    
+      | 方法 | 说明 |
+      | ------ | ------ |
+      | long getCreationTime() | 返回session创建时间 |
+      | public String getId() | 返回session创建时JSP引擎为它设的唯一的ID号 |
+      | public Object setAttribute(String name, Object value) | 使用指定名称将对象绑定到此会话 |
+      | public Object getAttribute(String name) | 返回与此会话中的指定名称绑定在一起的对象，如果没有对象绑定在该名称下，则返回null |
+      | String[] getValueNames() | 返回一个包含此session中所有可用属性的数组 |
+      | int getMaxInactiveInterval() | 返回两次请求间隔多长时间此session被取消(单位秒) |
+      
+      
 
 
 
