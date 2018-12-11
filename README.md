@@ -317,7 +317,7 @@
         * session.setMaxInactiveInterval(时间); //单位是秒
         * 在WEB-INF/web.xml中配置:
           ```xml
-          <!-- 在WEB-INF/web.xml中配置 -->
+          <!-- 在WEB-INF/web.xml中配置，设置会话10分钟后过期 -->
           <session-config>
           <session-timeout>
                   10
