@@ -372,5 +372,38 @@
       | void wait(int timeout) | 使一个线程处于等待直到timeout结束或被唤醒 |
       | void wait() | 使一个线程处于等待知道被唤醒 |
 
+  * pageContext对象
+    * pageContext对象提供了对JSP页面内所有的对象及名字空间的访问
+    * pageContext对象可以访问到本页所在的session，也可以取本页面所在的application的某一属性值
+    * pageContext对象相当于页面中的所有功能的集大成者
+    * pageContext对象的本类名也叫pageContext
+    * pageContext对象常用的方法: 
+      
+      | 方法 | 说明 |
+      | ------ | ------ |
+      | JspWriter getOut() | 返回当前客户端响应被使用的JspWriter流（out） |
+      | HttpSession getSession() | 返回当前页中的HttpSession对象（session） |
+      | Object getPage() | 返回当前页的Object对象（page） |
+      | ServletRequest getRequest() | 返回当前页的ServletRequest对象（request） |
+      | ServletResponse getResponse() | 返回当前页的ServletResponse对象（response） |
+      | void setAttribute(String name, Object attribute) | 设置属性及属性值 |
+      | Object getAttribute(String name, int scope) | 在指定范围内取属性的值 |
+      | int getAttributeScope(String name) | 返回某属性的作用范围 |
+      | void forward(String relativeUrlPath) | 使当前页面重导到另一页面 |
+      | void include(String relativeUrlPath) | 在当前位置包含另一文件 |
+
+      ```jsp
+      从session中获取属性值:
+      <%= session.getAttribute("username")%>
+      <br><hr>
+      从pageContext中获取属性值:
+      <%= pageContext.getSession().getAttribute("username")%>
+      <%
+        //跳转到application.jsp，但url不变
+        //pageContext.forward("application.jsp");
+        //包含exercise.jsp页面的内容
+        pageContext.include("exercise.jsp");
+      %>
+      ```
 
 
