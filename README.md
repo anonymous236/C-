@@ -278,7 +278,38 @@
       | String[] getValueNames() | 返回一个包含此session中所有可用属性的数组 |
       | int getMaxInactiveInterval() | 返回两次请求间隔多长时间此session被取消(单位秒) |
       
+      ```jsp
+      <%-- session_page1.jsp --%>
+      <body>
+        <%
+          SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+          Date date = new Date(session.getCreationTime());
+
+          session.setAttribute("username", "admin");
+        %>
+        <br><hr>
+        session创建时间: <%= sdf.format(date)%><br>
+        <hr>
+        session id: <%= session.getId()%><br>
       
+        <%-- 值描述 _blank 在新窗口中打开被链接文档 --%>
+        <a href="session_page2.jsp" target="_blank">跳转到session_page2.jsp</a>
+      </body>
+      
+      <%-- session_page2.jsp --%>
+      从session中获取属性值: <%= session.getAttribute("username")%>
+      ```
+    
+    * session对象的生命周期: 
+      * **创建**: 当客户端*第一次*访问某个jsp或者Servlet时，服务器会为当前会话创建一个SessionId。每次客户端向服务器发送请求时，都会将此SessionId携带过去，服务端会对此SessionId进行校验(判断是否属于同一次会话)。
+      * **活动**: 
+        * 某次会话当中通过超链接打开的新页面属于同一次会话
+	
+     
+     
+     
+     
+     
 
 
 
