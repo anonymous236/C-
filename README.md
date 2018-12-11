@@ -339,7 +339,21 @@
       | public Object getAttribute(String name) | 返回与此会话中的指定名称绑定在一起的对象，如果没有对象绑定在该名称下，则返回null |
       | Enumeration getAttributeNames() | 返回所有可用属性名的枚举 |
       | String getServerInfo() | 返回JSP(SERVLET)引擎名及版本号 |
-     
+      
+      ```jsp
+      <%
+        application.setAttribute("city", "北京");
+        application.setAttribute("university", "BIT");
+      %>
+      city属性值：<%= application.getAttribute("city")%><hr>
+      属性有：
+      <%
+        Enumeration enumeration = application.getAttributeNames();
+        while (enumeration.hasMoreElements()) {
+            out.print(enumeration.nextElement() + "&nbsp;&nbsp;");
+        }
+      %>
+      ```
 
 
 
