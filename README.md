@@ -89,7 +89,7 @@
 
 * JSP内置对象
   * JSP内置对象是Web容器创建的一组对象，不使用new关键字就可以使用
-  * 9大内置对象：out, request, response, session, application, (不太常用的: Page, pageContent, exception, config)
+  * 9大内置对象：out, request, response, session, application, (不太常用的: page, pageContext, exception, config)
   * out对象:
     * out对象是**JspWriter类**的实例，是向客户端输出内容常用的对象
     * 常用的方法有：
