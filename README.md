@@ -324,9 +324,21 @@
           </session-timeout>
           </session-config>
           ```
-     
-     
-     
+  * application对象
+    * application对象实现了用户间数据的共享，可存放全局变量
+    * application开始于服务器的启动，终止于服务器的关闭
+    * 在用户的前后连接或不同用户之间的连接中，可以对application对象的同一属性进行操作
+    * 在任何地方对application对象属性的操作，都将影响到其他用户对此的访问
+    * 服务器的启动和关闭决定了application对象的生命
+    * application对象是ServletContext类的实例
+    * application对象常用的方法:
+    
+      | 方法 | 说明 |
+      | ------ | ------ |
+      | public void setAttribute(String name, Object value) | 使用指定名称将对象绑定到此会话 |
+      | public Object getAttribute(String name) | 返回与此会话中的指定名称绑定在一起的对象，如果没有对象绑定在该名称下，则返回null |
+      | Enumeration getAttributeNames() | 返回所有可用属性名的枚举 |
+      | String getServerInfo() | 返回JSP(SERVLET)引擎名及版本号 |
      
 
 
