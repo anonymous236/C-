@@ -355,6 +355,21 @@
       %>
       ```
 
+  * page对象
+    * page对象就是指当前JSP页面本身，有点像类中的this指针，它是java.lang.Object类的实例
+    * page对象常用的方法: 
+      | 方法 | 说明 |
+      | ------ | ------ |
+      | class getClass() | 返回此Object的类 |
+      | int hashCode() | 返回此Object的hash码 |
+      | boolean equals(Object obj) | 判断此Object是否与指定的Object对象相等 |
+      | void copy(Object obj) | 把此Object拷贝到指定的Object对象中 |
+      | Object clone() | clone此Object对象 |
+      | String toString() | 把此Object对象转换成String类的对象 |
+      | void notify() | 唤醒一个等待的线程 |
+      | void notifyAll() | 唤醒所有等待的线程 |
+      | void wait(int timeout) | 使一个线程处于等待直到timeout结束或被唤醒 |
+      | void wait() | 使一个线程处于等待知道被唤醒 |
 
 
 
