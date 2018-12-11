@@ -358,6 +358,7 @@
   * page对象
     * page对象就是指当前JSP页面本身，有点像类中的this指针，它是java.lang.Object类的实例
     * page对象常用的方法: 
+    
       | 方法 | 说明 |
       | ------ | ------ |
       | class getClass() | 返回此Object的类 |
