@@ -304,8 +304,26 @@
       * **创建**: 当客户端*第一次*访问某个jsp或者Servlet时，服务器会为当前会话创建一个SessionId。每次客户端向服务器发送请求时，都会将此SessionId携带过去，服务端会对此SessionId进行校验(判断是否属于同一次会话)。
       * **活动**: 
         * 某次会话当中通过超链接打开的新页面属于同一次会话
-	
-     
+        * 只要当前会话页面没有全部关闭，重新打开新的浏览器窗口访问同一项目资源时属于同义词会话
+        * 本次会话的所有有关页面都关闭后，重新访问某个jsp或Servlet将会创建新的会话(**注意**: 原有会话还存在，只是这个旧的SessionId仍存在于服务端，只不过再也没有客户端会携带它然后交予服务端校验)
+      * **销毁**: <br>
+        session销毁的方式有三种: 
+	* 调用session.invalidate()方法
+	* Session过期（超时）
+	* 服务器重新启动
+    * Session对象的超时时间:
+      * Tomcat默认session超时时间为30分钟
+      * 设置session超时有两种方式:
+        * session.setMaxInactiveInterval(时间); //单位是秒
+	* 在WEB-INF/web.xml中配置:
+	  ```xml
+	  <!-- 设置会话10分钟后过期 -->
+	  <session-config>
+	  <session-timeout>
+		  10
+	  </session-config>
+	  </session-timeout> 
+	  ```
      
      
      
