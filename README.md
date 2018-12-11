@@ -406,4 +406,57 @@
       %>
       ```
 
+  * config对象
+    * config对象是在一个Servlet初始化时，JSP引擎向它传递信息用的，此信息包括Servlet初始化时所要用到的参数（通过属性名和属性值构成）以及服务器的有关信息（通过传递一个ServletContext）
+    * config对象常用的方法: 
+    
+      | 方法 | 说明 |
+      | ------ | ------ |
+      | ServletContext getServletContext() | 返回含有服务器相关信息的ServletContext对象 |
+      | String getInitParameter(String name) | 返回初始化参数的值 |
+      | Enumeration getInitParameterNames() | 返回Servlet初始化所需所有参数的枚举 |
+
+  * exception对象
+    * exception对象时一个异常对象，当一个页面在运行过程中发生了异常，就产生这个对象。如果一个JSP页面要应用此对象，就必须把isErrorPage设为true，否则无法编译。它实际上是java.lang.Throwable的对象
+    * exception对象常用的方法:
+    
+      | 方法 | 说明 |
+      | ------ | ------ |
+      | String getMessage() | 返回描述异常的消息 |
+      | String toString() | 返回关于异常的简短描述消息 |
+      | void printStackTrace() | 显示异常及其栈轨迹 |
+      | Throwable FillInStackTrace() | 重写异常的执行栈轨迹 |
+
+      ```jsp
+      <!-- 这个是exception_test.jsp页面 -->
+      <!-- 一定要指定errorPage的属性值，它指示哪个jsp页面处理异常 -->
+      <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="exception.jsp" %>
+      <html>
+        <head>
+          <title>exception测试页面</title>
+        </head>
+        <body>
+        <%
+          //抛出算数异常
+          out.print(1/0);
+        %>
+        </body>
+      </html>
+      
+      <!-- 这个是exception.jsp页面 -->
+      <!-- 一定要将isErrorPage设为true -->
+      <%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="exception.jsp" isErrorPage="true" %>
+      <html>
+        <head>
+          <title>exception抛出异常页面</title>
+        </head>
+        <body>
+          <br><hr>
+          异常的消息是：<%= exception.getMessage()%>
+          <br><hr>
+          异常的字符串描述：<%= exception.toString()%>
+          <br><hr>
+        </body>
+      </html>
+      ```
 
