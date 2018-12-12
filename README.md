@@ -549,7 +549,11 @@
       2. <jsp:serProperty name="JavaBean实例名" property="JavaBean属性名" /> (跟表单关联)
       3. <jsp:serProperty name="JavaBean实例名" property="JavaBean属性名" value="BeanValue" /> (手工设置)
       4. <jsp:serProperty name="JavaBean实例名" property="propertyName" param="request对象中的参数名" /> (跟request参数关联)
+    * \<jsp:getProperty>
+      * 获取指定JavaBean对象的属性值
+      * \<jsp:getProperty name="JavaBean实例名" property="属性名" />
 
+    
       ```jsp
       使用useBean创建JavaBean的实例
       <br><hr>
@@ -573,10 +577,15 @@
       <jsp:setProperty name="myUsers" property="username" param="user" />
       <jsp:setProperty name="myUsers" property="password" />
     
-      用户名：<%= myUsers.getUsername()%><br>
-      密码：<%= myUsers.getPassword()%>
+      <%--
+        <!-- 使用传统的方式获取用户名和密码 -->
+        用户名：<%= myUsers.getUsername()%><br>
+        密码：<%= myUsers.getPassword()%>
+      --%>
+      <!-- 使用getProperty的方式获取用户名和密码 -->
+      用户名：<jsp:getProperty name="myUsers" property="username" />
+      <br>
+      密码：<jsp:getProperty name="myUsers" property="password" />
       ```
-
-
 
 
