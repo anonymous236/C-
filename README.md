@@ -491,7 +491,53 @@
     | JSP2.0新增加的元素，主要用来动态生成XML元素标签的值 | \<jsp:attribute> <br> \<jsp:body> <br> \<jsp:element> |
     | JSP2.0新增加的元素，主要用在Tag File中 | \<jsp:invoke> <br> \<jsp:dobody> |
 
-
+* 在JSP页面中使用JavaBean:
+  * 像使用普通Java类一样，创建JavaBean实例
+    ```java
+    //在项目 -> src 创建包 ->  类文件
+    package com.po;
+    public class Users {
+        private String username;
+        private String password;
+    
+        //JavaBean原则，定义构造方法
+        public Users() {}
+    
+        public void setUsername(String username) {
+            this.username = username;
+        }
+        public void setPassword(String password) {
+            this.password = password;
+        }
+        public String getUsername() {
+            return username;
+        }
+        public String getPassword() {
+            return password;
+        }
+    }
+    ```
+    ```jsp
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <%@ page import="com.po.Users" %>
+    <html>
+    <head>
+        <title>JavaBean</title>
+    </head>
+    <body>
+        <br><hr>
+        使用普通方式创建JavaBean的实例
+        <br><hr>
+        <%
+            Users user = new Users();
+            user.setUsername((String)session.getAttribute("username"));
+            user.setPassword((String)session.getAttribute("password"));
+        %>
+        用户名：<%= user.getUsername()%><br>
+        密码：<%= user.getPassword()%>
+    </body>
+    </html>
+    ```
 
 
 
