@@ -518,6 +518,7 @@
     }
     ```
     ```jsp
+    <!-- jsp页面 -->
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <%@ page import="com.po.Users" %>
     <html>
@@ -538,6 +539,15 @@
     </body>
     </html>
     ```
-
+  * 在jsp页面中使用jsp动作标签来使用JavaBean: userBean、setProperty、getProperty
+    * <jsp:useBean>
+      * 在jsp页面中实例化或在指定范围内使用JavaBean
+      * <jsp:useBean id="标识符" class="包.类名" scope="作用范围" />
+    * <jsp:setProperty>
+      * 给已经实例化的JavaBean对象的属性赋值，一共有四种形式: 
+      1. <jsp:serProperty name="JavaBean实例名" property="\*" /> (跟表单关联)
+      2. <jsp:serProperty name="JavaBean实例名" property="JavaBean属性名" /> (跟表单关联)
+      3. <jsp:serProperty name="JavaBean实例名" property="JavaBean属性名" value="BeanValue" /> (手工设置)
+      4. <jsp:serProperty name="JavaBean实例名" property="propertyName" param="request对象中的参数名" /> (跟request参数关联)
 
 
