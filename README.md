@@ -460,4 +460,29 @@
       </html>
       ```
 ---
-* JavaBeans
+* JavaBean
+  * JavaBean是符合某种特定的规范的Java类。使用JavaBean的好处是解决代码的重复性，减少代码冗余，功能区分明确，提高了代码的可维护性
+  * JavaBean的设计原则:
+    * 公有类
+    * 含无参的公有构造方法
+    * 属性是私有的
+    * 使用getter和setter访问器对属性进行封装
+    ```java
+    public class Students {
+        private String name;
+        public Strdents() {}
+        public void setName(String name) {
+            this.name = name;
+        }
+        public String getName() {
+            return this.name;
+        }
+    }
+    ```
+* JSP动作元素
+  * JSP动作元素（action elements），动作元素为请求处理阶段提供信息。动作元素遵循XML元素的语法，有一个包含元素名的开始标签，可以有属性、可选的内容、与开始标签匹配的结束标签
+
+
+
+
+
