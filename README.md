@@ -481,6 +481,15 @@
     ```
 * JSP动作元素
   * JSP动作元素（action elements），动作元素为请求处理阶段提供信息。动作元素遵循XML元素的语法，有一个包含元素名的开始标签，可以有属性、可选的内容、与开始标签匹配的结束标签
+  * JSP动作元素一共有5类"
+    
+    | 说明 | 标签 |
+    | ------ | ------ |
+    | 与存取JavaBean有关 | \<jsp:useBean> <br> \<jsp:setProperty> <br> \<jsp:getProperty> |
+    | JSP1.2就开始有的基本元素 | \<jsp:include> <br> \<jsp:forward> <br> \<jsp:param> <br> \<jsp:plugin> <br> \<jsp:params> <br> \<jsp:fallback> |
+    | JSP2.0新增加的元素，主要与JSP Document有关 | \<jsp:root> <br> \<jsp:declaration> <br> \<jsp:scriplet> <br> \<jsp:expression> <br> \<jsp:text> <br> \<jsp:output> |
+    | JSP2.0新增加的元素，主要用来动态生成XML元素标签的值 | \<jsp:attribute> <br> \<jsp:body> <br> \<jsp:element> |
+    | JSP2.0新增加的元素，主要用在Tag File中 | \<jsp:invoke> <br> \<jsp:dobody> |
 
 
 
