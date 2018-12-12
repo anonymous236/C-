@@ -540,14 +540,43 @@
     </html>
     ```
   * 在jsp页面中使用jsp动作标签来使用JavaBean: userBean、setProperty、getProperty
-    * <jsp:useBean>
+    * \<jsp:useBean>
       * 在jsp页面中实例化或在指定范围内使用JavaBean
       * <jsp:useBean id="标识符" class="包.类名" scope="作用范围" />
-    * <jsp:setProperty>
+    * \<jsp:setProperty>
       * 给已经实例化的JavaBean对象的属性赋值，一共有四种形式: 
       1. <jsp:serProperty name="JavaBean实例名" property="\*" /> (跟表单关联)
       2. <jsp:serProperty name="JavaBean实例名" property="JavaBean属性名" /> (跟表单关联)
       3. <jsp:serProperty name="JavaBean实例名" property="JavaBean属性名" value="BeanValue" /> (手工设置)
       4. <jsp:serProperty name="JavaBean实例名" property="propertyName" param="request对象中的参数名" /> (跟request参数关联)
+
+      ```jsp
+      使用useBean创建JavaBean的实例
+      <br><hr>
+      <jsp:useBean id="myUsers" class="com.po.Users" scope="page" />
+      <%--
+          <!-- 根据表单自动匹配所有属性 -->
+          <jsp:setProperty name="myUsers" property="*" />
+      --%>
+      <%--
+          <!-- 根据表单匹配部分属性 -->
+          <jsp:setProperty name="myUsers" property="username" />
+          <jsp:setProperty name="myUsers" property="password" />
+      --%>
+      <%--
+          <!-- 与表单无关，通过手工赋值给属性 -->
+          <jsp:setProperty name="myUsers" property="*" />
+          <jsp:setProperty name="myUsers" property="password" value="123" />
+      --%>
+      <!-- 通过URL传参给属性赋值 -->
+      <!-- <form action="javaBean_page.jsp?user=jeff" method="post"> -->
+      <jsp:setProperty name="myUsers" property="username" param="user" />
+      <jsp:setProperty name="myUsers" property="password" />
+    
+      用户名：<%= myUsers.getUsername()%><br>
+      密码：<%= myUsers.getPassword()%>
+      ```
+
+
 
 
