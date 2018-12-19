@@ -1,4 +1,7 @@
+<a name="top">
+
 # Java程序设计
+
 ---
 * Java三种核心机制：Java虚拟机、代码安全性检查、垃圾收集机制
 * Java程序的编译和运行：源程序(Source.java)经过编译(javac)生成字节码文件(Source.class)，它是平台无关的。字节码文件使用Java命令来运行，Java命令实际调用虚拟机(虚拟机在实际的机器之上，如win、Linux等，来运行代码)
@@ -7,9 +10,9 @@
 * Java自动垃圾回收：(虚拟机的)系统级线程跟踪存储空间的分配情况；在JVM空闲时，检查并释放那些可被释放的存储空间；程序员无需也无法精确控制和干预该回收过程。
 # JSP
 本节目录:
-<br><a href="#p1" style="text-decoration:none;">tomcat服务器中的目录结构
-<br><a href="#p2" style="text-decoration:none;" />JSP页面元素构成: 指令、表达式、小脚本、声明、注释、静态内容
-<br><a href="#p3" style="text-decoration:none;" />JavaBean
+  * <a href="#p1" style="text-decoration:none;">tomcat服务器中的目录结构
+  * <a href="#p2" style="text-decoration:none;" />JSP页面元素构成: 指令、表达式、小脚本、声明、注释、静态内容
+  * <a href="#p3" style="text-decoration:none;" />JavaBean
 
 
 ---
@@ -38,6 +41,8 @@
     ```
   * classes目录用来放置编译生成的字节码文件: *.class文件。
   * lib目录用来存放需要的jar包。
+
+<a href="#top" style="text-decoration:none;">[回到顶部]
 
 ---
 * <a name="p2">JSP页面元素构成: 指令、表达式、小脚本、声明、注释、静态内容。
@@ -465,6 +470,9 @@
         </body>
       </html>
       ```
+
+<a href="#top" style="text-decoration:none;">[回到顶部]
+
 ---
 * <a name="p3">JavaBean
   * JavaBean是符合某种特定的规范的Java类。使用JavaBean的好处是解决代码的重复性，减少代码冗余，功能区分明确，提高了代码的可维护性
@@ -606,5 +614,5 @@
   * Model1模型出现之前，整个Web应用的情况：几乎全部由jsp页面组成，jsp页面接收处理客户端请求，对请求处理后直接做出响应。这样，在界面层充斥着大量的业务逻辑的代码和数据访问层的代码，web程序的可扩展性和可维护性非常差
   * JavaBean的出现可以使jsp页面中使用JavaBean封装的数据或者调用JavaBean的业务逻辑代码，可提升程序的可维护性
 
-
+<a href="#top" style="text-decoration:none;">[回到顶部]
 
