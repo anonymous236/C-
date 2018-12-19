@@ -543,6 +543,7 @@
     * \<jsp:useBean>
       * 在jsp页面中实例化或在指定范围内使用JavaBean
       * <jsp:useBean id="标识符" class="包.类名" scope="作用范围" />
+      * **需要注意的是，想要在不同的jsp页面中使用JavaBean，它们的 id=\"标识符\" 需要相同。并且scope=\"application\"**
     * \<jsp:setProperty>
       * 给已经实例化的JavaBean对象的属性赋值，一共有四种形式: 
       1. <jsp:serProperty name="JavaBean实例名" property="\*" /> (跟表单关联)
