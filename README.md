@@ -593,3 +593,11 @@
     * request //可以通过HttpRequest.getAttribute()方法获得JavaBean对象
     * sesstion //可以通过HttpSession.getAttribute()方法获得JavaBean对象
     * application //可以通过application.getAttribute()方法获得JavaBean对象
+
+* Model1
+  * web应用程序开发可以分为Model1和Model2
+  * Model1模型出现之前，整个Web应用的情况：几乎全部由jsp页面组成，jsp页面接收处理客户端请求，对请求处理后直接做出响应。这样，在界面层充斥着大量的业务逻辑的代码和数据访问层的代码，web程序的可扩展性和可维护性非常差
+  * JavaBean的出现可以使jsp页面中使用JavaBean封装的数据或者调用JavaBean的业务逻辑代码，可提升程序的可维护性
+
+
+
