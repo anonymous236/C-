@@ -7,12 +7,13 @@
 * Java自动垃圾回收：(虚拟机的)系统级线程跟踪存储空间的分配情况；在JVM空闲时，检查并释放那些可被释放的存储空间；程序员无需也无法精确控制和干预该回收过程。
 # JSP
 本节目录:
-<br><a href="#p1">tomcat服务器中的目录结构< /a>
-
+<br><a href="#p1" style="text-decoration:none;">tomcat服务器中的目录结构
+<br><a href="#p2" style="text-decoration:none;" />JSP页面元素构成: 指令、表达式、小脚本、声明、注释、静态内容
+<br><a href="#p3" style="text-decoration:none;" />JavaBean
 
 
 ---
-* <a name="p1">tomcat服务器中的目录结构：< /a>
+* <a name="p1">tomcat服务器中的目录结构：
 
 | 目录 | 说明 |
 | ------ | ------ |
@@ -39,7 +40,7 @@
   * lib目录用来存放需要的jar包。
 
 ---
-* JSP页面元素构成: 指令、表达式、小脚本、声明、注释、静态内容。
+* <a name="p2">JSP页面元素构成: 指令、表达式、小脚本、声明、注释、静态内容。
   * __1. JSP指令元素：__
     * page指令: 通常位于jsp页面的顶端，同一个页面可以有多个page指令<br>
       page指令语法: 
@@ -465,7 +466,7 @@
       </html>
       ```
 ---
-* JavaBean
+* <a name="p3">JavaBean
   * JavaBean是符合某种特定的规范的Java类。使用JavaBean的好处是解决代码的重复性，减少代码冗余，功能区分明确，提高了代码的可维护性
   * JavaBean的设计原则:
     * 公有类
