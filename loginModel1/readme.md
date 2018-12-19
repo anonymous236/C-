@@ -1,6 +1,7 @@
 ## 这是这个小项目的说明
 
 * 本项目是实现了用户登录、跳转、显示用户名的功能
+* 首页是: [/model_LoginModel1/web/index.jsp](https://github.com/anonymous236/jsp/blob/master/loginModel1/model_LoginModel1/web/index.jsp)
 * 使用JavaBean来使代码分离:
   <br>在src目录下创建包:
   * **com.po** 表示跟用户有关的实体类的包: com.po.Users.java
