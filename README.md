@@ -588,4 +588,8 @@
       密码：<jsp:getProperty name="myUsers" property="password" />
       ```
 
-
+  * JavaBean的四个作用域范围:
+    * page //仅在当前页面有效
+    * request //可以通过HttpRequest.getAttribute()方法获得JavaBean对象
+    * sesstion //可以通过HttpSession.getAttribute()方法获得JavaBean对象
+    * application //可以通过application.getAttribute()方法获得JavaBean对象
