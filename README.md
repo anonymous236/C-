@@ -42,7 +42,7 @@
   * classes目录用来放置编译生成的字节码文件: *.class文件。
   * lib目录用来存放需要的jar包。
 
-<a href="#top" style="text-decoration:none;">[回到顶部]
+<a href="#top" style="display:block;text-align:right;float:right;text-decoration:none;">[回到顶部]
 
 ---
 * <a name="p2">JSP页面元素构成: 指令、表达式、小脚本、声明、注释、静态内容。
