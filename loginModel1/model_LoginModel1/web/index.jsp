@@ -17,7 +17,7 @@
         <a href="#"><img src="assets/logo.png" alt="" /></a>
     </div>
     <div id="box">
-        <form action="dologin.jsp?user=jeff" method="post">
+        <form action="dologin.jsp" method="post">
             <p class="main">
                 <label>用户名: </label>
                 <input name="username" value="" />
